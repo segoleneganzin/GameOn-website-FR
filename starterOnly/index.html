@@ -39,45 +39,45 @@
           Vous aimez jouer ? Notre prochain évènement gaming est ouvert
           aux réservations... Places limitées !
         </p>
-        <button class="btn-signup modal-btn">
+        <button class="btn-signup modal__btn">
           je m'inscris
         </button>
       </div>
       <div class="hero-img">
         <img src="./assets/bg_img.jpg" alt="img" />
       </div>
-      <button class="btn-signup modal-btn">
+      <button class="btn-signup modal__btn">
         je m'inscris
       </button>
     </div>
 
-    <div class="bground">
-      <div class="content">
-        <span class="close"></span>
-        <div class="modal-body">
+    <div class="modal__bground">
+      <div class="modal__content">
+        <span class="modal__close"></span>
+        <div class="modal__body">
           <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
-            <div class="formData">
+            <div class="modal__formData">
               <label>Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first" minlength="2" /><br>
             </div>
-            <div class="formData">
+            <div class="modal__formData">
               <label>Nom</label><br>
               <input class="text-control" type="text" id="last" name="last" /><br>
             </div>
-            <div class="formData">
+            <div class="modal__formData">
               <label>E-mail</label><br>
               <input class="text-control" type="email" id="email" name="email" /><br>
             </div>
-            <div class="formData">
+            <div class="modal__formData">
               <label>Date de naissance</label><br>
               <input class="text-control" type="date" id="birthdate" name="birthdate" /><br>
             </div>
-            <div class="formData">
+            <div class="modal__formData">
               <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
             </div>
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
-            <div class="formData">
+            <div class="modal__formData">
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
                 <span class="checkbox-icon"></span>
@@ -104,7 +104,7 @@
                 Portland</label>
             </div>
 
-            <div class="formData">
+            <div class="modal__formData">
               <input class="checkbox-input" type="checkbox" id="checkbox1" checked />
               <label class="checkbox2-label" for="checkbox1" required>
                 <span class="checkbox-icon"></span>
@@ -129,7 +129,8 @@
       Copyright 2014 - 2022, GameOn Inc.
     </p>
   </footer>
-  <script src="modal.js"></script>
+  <script src="./scripts/menu.js"></script>
+  <script src="./scripts/modal.js"></script>
 </body>
 
 </html>

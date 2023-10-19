@@ -1,3 +1,5 @@
+/* !! TODO : rangement atomic */
+
 :root {
   --font-default: "DM Sans", Arial, Helvetica, sans-serif;
   --font-slab: var(--font-default);
@@ -13,7 +15,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
+  /* background-image: url("background.png"); */
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -116,7 +118,7 @@ main {
   text-align: justify;
 }
 
-.modal-btn {
+.modal__btn {
   font-size: 145%;
   background: #fe142f;
   display: flex;
@@ -128,7 +130,7 @@ main {
   cursor: pointer;
 }
 
-.modal-btn:hover {
+.modal__btn:hover {
   background: #3876ac;
 }
 
@@ -140,25 +142,11 @@ main {
 
 /* Modal form */
 
-.button {
-  background: #fe142f;
-  margin-top: 0.5em;
-  padding: 1em;
-  color: #fff;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.button:hover {
-  background: #3876ac;
-}
-
 .smFont {
   font-size: 16px;
 }
 
-.bground {
+.modal__bground {
   display: none;
   position: fixed;
   z-index: 1;
@@ -170,7 +158,7 @@ main {
   background-color: rgba(26, 39, 156, 0.4);
 }
 
-.content {
+.modal__content {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
@@ -184,7 +172,7 @@ main {
   padding-top: 10px;
 }
 
-.modal-body {
+.modal__body {
   padding: 15px 8%;
   margin: 15px auto;
 }
@@ -209,7 +197,7 @@ input {
   font-size: 20px;
   height: 48px;
 }
-.formData[data-error]::after {
+.modal__formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
   color: #e54858;
@@ -221,10 +209,10 @@ input {
   opacity: 0;
   transition: 0.3s;
 }
-.formData[data-error-visible="true"]::after {
+.modal__formData[data-error-visible="true"]::after {
   opacity: 1;
 }
-.formData[data-error-visible="true"] .text-control {
+.modal__formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
 /* 
@@ -297,7 +285,7 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
-.close {
+.modal__close {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -307,8 +295,8 @@ input[data-error]::after {
   cursor: pointer;
   transform: scale(0.7);
 }
-.close:before,
-.close:after {
+.modal__close:before,
+.modal__close:after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -316,10 +304,10 @@ input[data-error]::after {
   width: 3px;
   background-color: #fff;
 }
-.close:before {
+.modal__close:before {
   transform: rotate(45deg);
 }
-.close:after {
+.modal__close:after {
   transform: rotate(-45deg);
 }
 .btn-submit,
@@ -391,7 +379,7 @@ input[data-error]::after {
   z-index: 99;
 }
 
-/* Hide the items when the select box is closed: */
+/* Hide the items when the select box is modal-closed: */
 .select-hide {
   display: none;
 }
