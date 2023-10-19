@@ -1,6 +1,32 @@
 /**
  * Typography
  */
+body {
+  font-family: $font-default;
+  font-size: 1.125rem;
+}
 .smFont {
   font-size: 16px;
+}
+
+/* Buttons */
+.btn-submit {
+  font-size: 1rem;
+}
+.btn-signup {
+  font-size: 1.3rem;
+}
+
+/* footer */
+footer {
+  .copyrights {
+    color: #fe142f;
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+}
+@media screen and (max-width: 800px) {
+  .copyrights {
+    text-align: center;
+  }
 }
