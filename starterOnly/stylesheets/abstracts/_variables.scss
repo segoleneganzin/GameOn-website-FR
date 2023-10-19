@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains all variables.
+// -----------------------------------------------------------------------------
+$font-default: "DM Sans", Arial, Helvetica, sans-serif;
+$font-slab: $font-default;
+$modal-duration: 0.8s;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  "small": 375px,
+  "medium": 768px,
+  "large": 1024px,
+);
