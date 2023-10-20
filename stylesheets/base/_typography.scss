@@ -17,6 +17,27 @@ body {
   font-size: 1.3rem;
 }
 
+/* Form */
+label {
+  font-family: $font-default;
+  font-size: 14px;
+  font-weight: 400;
+}
+.text-control {
+  font-size: 20px;
+}
+.radio-label,
+.checkbox-label {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* custom select end */
+.text-label {
+  font-weight: normal;
+  font-size: 16px;
+}
+
 /* footer */
 footer {
   .copyrights {
