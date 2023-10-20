@@ -12,16 +12,16 @@
 </head>
 
 <body>
-  <header class="topnav" id="myTopnav">
-    <div class="header-logo">
+  <header class="header">
+    <div class="header__logo">
       <img alt="logo" src="./assets/Logo.png" width="auto" height="auto" />
     </div>
-    <nav class="main-navbar">
-      <a href="#" class="active"><span>Accueil</span></a>
-      <a href="#"><span>Détails de l'évènement</span></a>
-      <a href="#"><span>À propos</span></a>
-      <a href="#"><span>Contact</span></a>
-      <a href="#"><span>Évènements passés</span></a>
+    <nav class="main-navbar" id="main-nav">
+      <a href="#" class="active">Accueil</a>
+      <a href="#">Détails de l'évènement</a>
+      <a href="#">À propos</a>
+      <a href="#">Contact</a>
+      <a href="#">Évènements passés</a>
       <a href="javascript:void(0);" class="icon" onclick="editNav()">
         <i class="fa fa-bars"></i>
       </a>
@@ -46,7 +46,7 @@
       <div class="hero__img">
         <img src="./assets/bg_img.jpg" alt="fille jouant aux jeux videos" />
       </div>
-      <!-- TODO responsive button add js to manage just one button-->
+      <!-- responsive sign up button -->
       <button class="btn btn-signup modal__btn ">
         je m'inscris
       </button>
@@ -58,27 +58,27 @@
         <div class="modal__body">
           <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
             <div class="modal__formData">
-              <label>Prénom</label>
+              <label class="label">Prénom</label>
               <input class="text-control" type="text" id="first" name="first" minlength="2" />
             </div>
             <div class="modal__formData">
-              <label>Nom</label>
+              <label class="label">Nom</label>
               <input class="text-control" type="text" id="last" name="last" />
             </div>
             <div class="modal__formData">
-              <label>E-mail</label>
+              <label class="label">E-mail</label>
               <input class="text-control" type="email" id="email" name="email" />
             </div>
             <div class="modal__formData">
-              <label>Date de naissance</label>
+              <label class="label">Date de naissance</label>
               <input class="text-control" type="date" id="birthdate" name="birthdate" />
             </div>
             <div class="modal__formData">
-              <label>À combien de tournois GameOn avez-vous déjà participé ?</label>
+              <label class="label">À combien de tournois GameOn avez-vous déjà participé ?</label>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
             </div>
             <div class="modal__formData">
-              <legend class="text-label">A quel tournoi souhaitez-vous participer cette année ?</legend>
+              <legend class="label">À quel tournoi souhaitez-vous participer cette année ?</legend>
               <input class="radio-input" type="radio" id="location1" name="location" value="New York" />
               <label class="radio-label" for="location1">
                 <span class="radio-icon"></span>
@@ -106,6 +106,7 @@
             </div>
 
             <div class="modal__formData">
+              <!-- check by default does not comply with RGPD -->
               <input class="checkbox-input" type="checkbox" id="checkbox1" checked />
               <label class="checkbox-label" for="checkbox1" required>
                 <span class="checkbox-icon"></span>

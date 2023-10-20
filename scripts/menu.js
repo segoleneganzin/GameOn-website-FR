@@ -1,10 +1,10 @@
 // Script for menu
 // ****************** Responsive menu
 function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+  var x = document.getElementById("main-nav");
+  if (x.className === "main-navbar") {
+    x.className = "main-navbar--responsive";
   } else {
-    x.className = "topnav";
+    x.className = "main-navbar";
   }
 }

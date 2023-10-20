@@ -27,6 +27,7 @@ img {
 /**
  * Typography
  */
+/***** general *****/
 body {
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
   font-size: 1.125rem;
@@ -36,7 +37,7 @@ body {
   font-size: 16px;
 }
 
-/* Buttons */
+/***** Buttons *****/
 .btn-submit {
   font-size: 1rem;
 }
@@ -45,8 +46,54 @@ body {
   font-size: 1.3rem;
 }
 
-/* Form */
-label {
+/***** Menu *****/
+.main-navbar .icon i {
+  color: #ff0000;
+  font-size: 22px;
+}
+
+.main-navbar a,
+.main-navbar--responsive a {
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  color: #000000;
+  text-decoration: none;
+}
+.main-navbar a:hover,
+.main-navbar--responsive a:hover {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+.main-navbar .active,
+.main-navbar--responsive .active {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+/* Landing page */
+main {
+  font-size: 130%;
+  font-weight: bolder;
+  color: black;
+  text-align: justify;
+}
+
+/***** Hero *****/
+.hero__content {
+  color: #fff;
+  text-align: left;
+}
+.hero__headline {
+  font-size: 6rem;
+  font-weight: normal;
+  white-space: nowrap;
+}
+.hero__text {
+  font-weight: normal;
+}
+
+/***** Form *****/
+.label {
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -62,31 +109,58 @@ label {
   font-weight: normal;
 }
 
-/* custom select end */
-.text-label {
-  font-weight: normal;
-  font-size: 16px;
-}
-
-/* footer */
+/***** footer *****/
 footer .copyrights {
   color: #fe142f;
   font-size: 1rem;
   font-weight: bolder;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
+  /* Hero responsive */
+  .hero__content {
+    color: #000;
+  }
+  .hero__headline {
+    font-size: 4.5rem;
+    white-space: normal;
+  }
+  .hero__text {
+    font-size: 1.5rem;
+  }
+  /* Footer responsive */
   .copyrights {
     text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* Menu responsive */
+  .main-navbar--responsive a {
+    text-align: left;
   }
 }
 /**
  * Header
  */
-.header-logo {
+.header {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow: hidden;
+  gap: 3rem;
+  margin: 3.5%;
+}
+.header__logo {
   float: left;
 }
 
+@media screen and (max-width: 1024px) {
+  .header {
+    align-items: flex-start;
+  }
+}
 /**
  * Footer
  */
@@ -100,83 +174,56 @@ footer .copyrights {
   margin: 60px 0 30px;
 }
 
-@media screen and (max-width: 800px) {
-  .copyrights {
-    margin-top: 50px;
+@media screen and (max-width: 1024px) {
+  footer .copyrights {
+    margin: 50px;
   }
 }
 /**
  * Menu
  */
-.topnav {
-  overflow: hidden;
-  margin: 3.5%;
-}
-
-.main-navbar {
-  float: right;
-}
-
-.topnav a {
+.main-navbar a {
   float: left;
-  display: block;
-  color: #000000;
   text-align: center;
-  padding: 12px 12px;
-  margin: 5px;
-  text-decoration: none;
-  font-size: 20px;
-  font-family: Roboto, sans-serif;
 }
-
-.topnav a:hover {
-  background-color: #ff0000;
-  color: #ffffff;
-  border-radius: 15px;
-}
-
-.topnav a.active {
-  background-color: #ff0000;
-  color: #ffffff;
-  border-radius: 15px;
-}
-
-.topnav .icon {
+.main-navbar .icon {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .topnav a {
+.main-navbar a,
+.main-navbar--responsive a {
+  display: block;
+  padding: 12px 12px;
+  margin: 5px;
+}
+.main-navbar a:hover,
+.main-navbar--responsive a:hover {
+  border-radius: 15px;
+}
+.main-navbar .active,
+.main-navbar--responsive .active {
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 1024px) {
+  .main-navbar a {
     display: none;
   }
-  .topnav a.icon {
+  .main-navbar .icon {
     float: right;
     display: block;
   }
-}
-@media screen and (max-width: 768px) {
-  .topnav.responsive {
+  .main-navbar--responsive {
     position: relative;
   }
-  .topnav.responsive .icon {
+  .main-navbar--responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  .topnav.responsive a {
+  .main-navbar--responsive a {
     float: none;
     display: block;
-    text-align: left;
-  }
-}
-@media screen and (max-width: 540px) {
-  .topnav a {
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
   }
 }
 /**
@@ -277,25 +324,25 @@ footer .copyrights {
  * Hero
  */
 .hero__section {
-  min-height: 93vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   overflow: hidden;
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
 }
-
+.hero__section > .btn-signup {
+  display: none;
+}
 .hero__content {
-  padding: 51px 67px;
-  grid-column: span 4;
   background: #232323;
-  color: #fff;
   position: relative;
-  text-align: left;
   min-width: 424px;
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5625em;
+  padding: 51px 67px;
 }
-
 .hero__content::after {
   content: "";
   width: 100%;
@@ -305,29 +352,17 @@ footer .copyrights {
   right: -80px;
   top: 0;
 }
-
 .hero__content > * {
   position: relative;
   z-index: 1;
 }
-
-.hero__headline {
-  font-size: 6rem;
-  font-weight: normal;
-  white-space: nowrap;
-}
-
 .hero__text {
   width: 146%;
-  font-weight: normal;
-  margin-top: 57px;
   padding: 0;
 }
-
 .hero__img {
   grid-column: span 8;
 }
-
 .hero__img img {
   width: 100%;
   height: 100%;
@@ -335,19 +370,21 @@ footer .copyrights {
   padding: 0;
 }
 
-.hero__section > .btn-signup {
-  display: none;
-}
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   .hero__section {
+    min-height: 93vh;
     display: block;
     box-shadow: unset;
   }
+  .hero__section > .btn-signup {
+    display: block;
+    margin: 32px auto 10px;
+    padding: 12px 35px;
+  }
   .hero__content {
     background: #fff;
-    color: #000;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
+    gap: 40px;
   }
   .hero__content::after {
     content: unset;
@@ -355,65 +392,56 @@ footer .copyrights {
   .hero__content .btn-signup {
     display: none;
   }
-  .hero__headline {
-    font-size: 4.5rem;
-    white-space: normal;
-  }
   .hero__text {
     width: unset;
-    font-size: 1.5rem;
   }
   .hero__img img {
     border-radius: 10px;
-    margin-top: 40px;
-  }
-  .hero__section > .btn-signup {
-    display: block;
-    margin: 32px auto 10px;
-    padding: 12px 35px;
+    margin: 40px auto 60px;
   }
 }
 /*
 ** Forms
 */
-label {
+form {
+  /*
+  input[data-error]::after {
+    content: attr(data-error);
+    font-size: 0.4em;
+    color: red;
+  }
+  */
+}
+form label {
   display: inline-block;
   margin-bottom: 11px;
 }
-
-input {
+form legend {
+  margin: 11px 0;
+}
+form input {
   padding: 8px;
   border: 0.8px solid #ccc;
   outline: none;
 }
-
-.text-control {
+form .text-control {
   margin: 0;
   padding: 8px;
   width: 100%;
   border-radius: 8px;
   height: 48px;
 }
-
-/* 
-  input[data-error]::after {
-      content: attr(data-error);
-      font-size: 0.4em;
-      color: red;
-  } */
-.checkbox-input,
-.radio-input {
+form .checkbox-input,
+form .radio-input {
   display: none;
 }
-
-.radio-label,
-.checkbox-label {
+form .radio-label,
+form .checkbox-label {
   position: relative;
   margin-left: 36px;
 }
-
-.checkbox-icon,
-.radio-icon {
+form .checkbox-icon,
+form .radio-icon {
   display: block;
   width: 20px;
   height: 20px;
@@ -421,19 +449,18 @@ input {
   left: -30px;
   top: -1px;
 }
-.checkbox-icon::after,
-.radio-icon::after {
+form .checkbox-icon::after,
+form .radio-icon::after {
   content: "";
   position: absolute;
   transition: 0.3s;
   opacity: 0;
 }
-
-.radio-icon {
+form .radio-icon {
   border: 2px solid #279e7a;
   border-radius: 50%;
 }
-.radio-icon::after {
+form .radio-icon::after {
   width: 13px;
   height: 13px;
   border-radius: 50%;
@@ -442,17 +469,15 @@ input {
   left: 50%;
   top: 50%;
 }
-
-.radio-input:checked + .radio-label .radio-icon::after {
+form .radio-input:checked + .radio-label .radio-icon::after {
   opacity: 1;
 }
-
-.checkbox-icon {
+form .checkbox-icon {
   border-radius: 4px;
   border: 0;
   background: #c4c4c4;
 }
-.checkbox-icon::after {
+form .checkbox-icon::after {
   width: 7px;
   height: 4px;
   border-radius: 2px;
@@ -464,82 +489,14 @@ input {
   left: 21%;
   top: 19%;
 }
-
-.checkbox-input:checked + .checkbox-label .checkbox-icon {
+form .checkbox-input:checked + .checkbox-label .checkbox-icon {
   background: #279e7a;
 }
-.checkbox-input:checked + .checkbox-label .checkbox-icon::after {
+form .checkbox-input:checked + .checkbox-label .checkbox-icon::after {
   opacity: 1;
 }
 
 /* custom select styles */
-.custom-select {
-  position: relative;
-  font-family: Arial;
-  font-size: 1.1rem;
-  font-weight: normal;
-}
-
-.custom-select select {
-  display: none;
-}
-
-.select-selected {
-  background-color: #fff;
-}
-
-/* Style the arrow inside the select element: */
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 10px;
-  right: 13px;
-  width: 11px;
-  height: 11px;
-  border: 3px solid transparent;
-  border-bottom-color: #f00;
-  border-left-color: #f00;
-  transform: rotate(-48deg);
-  border-radius: 5px 0 5px 0;
-}
-
-/* Point the arrow upwards when the select box is open (active): */
-.select-selected.select-arrow-active:after {
-  transform: rotate(135deg);
-  top: 13px;
-}
-
-.select-items div,
-.select-selected {
-  color: #000;
-  padding: 11px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-  border-radius: 8px;
-  height: 48px;
-}
-
-/* Style items (options): */
-.select-items {
-  position: absolute;
-  background-color: #fff;
-  top: 89%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-/* Hide the items when the select box is modal-closed: */
-.select-hide {
-  display: none;
-}
-
-.select-items div:hover,
-.same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 /**
  * Button
  */
@@ -549,9 +506,19 @@ input {
   background: #fe142f;
   color: #fff;
   cursor: pointer;
+  /* open modal button in hero */
+  /* submit form modal button */
 }
 .btn:hover {
   background: #3876ac;
+}
+.btn-signup {
+  margin: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-transform: capitalize;
+  padding: 11px 30px;
+  border: none;
 }
 .btn-submit {
   margin: 0 auto;
@@ -559,26 +526,14 @@ input {
   padding: 12px 55px;
   border: 0;
 }
-.btn-signup {
-  margin: 0;
-  margin-top: 59px;
-  outline: none;
-  text-transform: capitalize;
-  padding: 15px 23px;
-  border: 0;
-}
 
 /**
  * Landing page
  */
 main {
-  font-size: 130%;
-  font-weight: bolder;
-  color: black;
   padding-top: 0.5vw;
   padding-left: 2vw;
   padding-right: 2vw;
-  margin: 1px 20px 15px;
+  margin: 1px 20px;
   border-radius: 2rem;
-  text-align: justify;
 }

@@ -1,94 +1,90 @@
 /**
  * Hero
  */
-.hero__section {
-  min-height: 93vh;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  overflow: hidden;
-  box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
-}
-.hero__content {
-  padding: 51px 67px;
-  grid-column: span 4;
-  background: #232323;
-  color: #fff;
-  position: relative;
-  text-align: left;
-  min-width: 424px;
-}
-.hero__content::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: #232323;
-  position: absolute;
-  right: -80px;
-  top: 0;
-}
-.hero__content > * {
-  position: relative;
-  z-index: 1;
-}
-.hero__headline {
-  font-size: 6rem;
-  font-weight: normal;
-  white-space: nowrap;
-}
-.hero__text {
-  width: 146%;
-  font-weight: normal;
-  margin-top: 57px;
-  padding: 0;
-}
-.hero__img {
-  grid-column: span 8;
-}
-.hero__img img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  padding: 0;
-}
-// responsive btn
-.hero__section > .btn-signup {
-  display: none;
-}
-@media screen and (max-width: 800px) {
-  .hero__section {
-    display: block;
-    box-shadow: unset;
-  }
-  .hero__content {
-    background: #fff;
-    color: #000;
-    padding: 20px;
-  }
-  .hero__content::after {
-    content: unset;
-  }
-  // large media btn
-  .hero__content .btn-signup {
-    display: none;
-  }
-  .hero__headline {
-    font-size: 4.5rem;
-    white-space: normal;
-  }
-  .hero__text {
-    width: unset;
-    font-size: 1.5rem;
-  }
-  .hero__img img {
+.hero {
+  &__section {
     border-radius: 10px;
-    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    overflow: hidden;
+    box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
+    // margin-bottom: 10px;
+    // responsive btn
+    & > .btn-signup {
+      display: none;
+    }
   }
-  // responsive btn
-  .hero__section > .btn-signup {
-    display: block;
-    margin: 32px auto 10px;
-    padding: 12px 35px;
+  &__content {
+    background: #232323;
+    position: relative;
+    min-width: 424px;
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5625em;
+    padding: 51px 67px;
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: #232323;
+      position: absolute;
+      right: -80px;
+      top: 0;
+    }
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+  &__text {
+    width: 146%;
+    padding: 0;
+  }
+  &__img {
+    grid-column: span 8;
+    & img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      padding: 0;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .hero {
+    &__section {
+      min-height: 93vh;
+      display: block;
+      box-shadow: unset;
+      // responsive btn
+      & > .btn-signup {
+        display: block;
+        margin: 32px auto 10px;
+        padding: 12px 35px;
+      }
+    }
+    &__content {
+      background: #fff;
+      padding: 0px 20px 20px 20px;
+      gap: 40px;
+      &::after {
+        content: unset;
+      }
+      // large media btn
+      & .btn-signup {
+        display: none;
+      }
+    }
+
+    &__text {
+      width: unset;
+    }
+    &__img {
+      & img {
+        border-radius: 10px;
+        margin: 40px auto 60px;
+      }
+    }
   }
 }
