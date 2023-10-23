@@ -126,10 +126,45 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  /* Menu responsive */
-  .main-navbar--responsive {
-    a {
-      text-align: left;
+  /* Hero responsive */
+  .hero {
+    &__headline {
+      font-size: 3.5rem;
+    }
+    &__text {
+      font-size: 1.3rem;
+    }
+  }
+  /* buttons */
+  .btn-signup {
+    font-size: 1.2rem;
+  }
+  /* Footer responsive */
+  footer {
+    .copyrights {
+      font-size: 0.8rem;
+    }
+  }
+}
+@media screen and (max-width: 580px) {
+  /* Hero responsive */
+  .hero {
+    &__headline {
+      font-size: 2.5rem;
+      font-weight: 500;
+    }
+    &__text {
+      font-size: 0.8125rem;
+    }
+  }
+  /* buttons */
+  .btn-signup {
+    font-size: 0.875rem;
+  }
+  /* Footer responsive */
+  footer {
+    .copyrights {
+      font-size: 0.625rem;
     }
   }
 }

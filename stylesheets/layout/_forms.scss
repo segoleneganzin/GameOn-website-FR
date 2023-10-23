@@ -30,25 +30,27 @@ form {
   }
   */
 
-  .checkbox-input,
-  .radio-input {
+  .radio-input,
+  .checkbox-input {
     display: none;
   }
 
   .radio-label,
   .checkbox-label {
     position: relative;
-    margin-left: 36px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 
-  .checkbox-icon,
-  .radio-icon {
-    display: block;
+  .radio-icon,
+  .checkbox-icon {
+    // display: block;
     width: 20px;
     height: 20px;
-    position: absolute;
-    left: -30px;
-    top: -1px;
+    position: relative;
+    // left: -30px;
+    // top: -1px;
     &::after {
       content: "";
       position: absolute;
@@ -56,8 +58,14 @@ form {
       opacity: 0;
     }
   }
+  .radio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+  }
   .radio-icon {
-    border: 2px solid #279e7a;
+    border: 2px solid $green;
     border-radius: 50%;
     &::after {
       width: 13px;
@@ -71,6 +79,10 @@ form {
   }
   .radio-input:checked + .radio-label .radio-icon::after {
     opacity: 1;
+  }
+
+  .checkbox-container {
+    margin: 20px auto;
   }
   .checkbox-icon {
     border-radius: 4px;
