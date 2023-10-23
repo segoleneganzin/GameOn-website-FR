@@ -18,12 +18,10 @@
     display: block;
     padding: 12px 12px;
     margin: 5px;
-    &:hover {
-      border-radius: 15px;
-    }
   }
-  .active {
-    border-radius: 15px;
+  .active,
+  a:hover {
+    border-radius: $radius;
   }
 }
 

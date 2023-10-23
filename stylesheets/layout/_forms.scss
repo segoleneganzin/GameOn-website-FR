@@ -19,7 +19,7 @@ form {
     margin: 0;
     padding: 8px;
     width: 100%;
-    border-radius: 8px;
+    border-radius: $radius;
     height: 48px;
   }
   /*
@@ -63,7 +63,7 @@ form {
       width: 13px;
       height: 13px;
       border-radius: 50%;
-      background-color: #279e7a;
+      background-color: $green;
       transform: translate(-50%, -50%);
       left: 50%;
       top: 50%;
@@ -90,7 +90,7 @@ form {
     }
   }
   .checkbox-input:checked + .checkbox-label .checkbox-icon {
-    background: #279e7a;
+    background: $green;
     &::after {
       opacity: 1;
     }

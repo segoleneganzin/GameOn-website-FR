@@ -84,7 +84,7 @@
     }
     &__img {
       & img {
-        border-radius: 10px;
+        border-radius: $radius;
         margin: 40px auto 60px;
       }
     }

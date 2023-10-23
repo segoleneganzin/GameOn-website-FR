@@ -12,7 +12,7 @@
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(26, 39, 156, 0.4);
+    background-color: $modal-bg-color;
   }
   &__content {
     margin: 5% auto;
@@ -21,7 +21,7 @@
     animation-name: modalopen;
     animation-duration: $modal-duration;
     background: #232323;
-    border-radius: 10px;
+    border-radius: $radius;
     overflow: hidden;
     position: relative;
     padding-top: 10px;
@@ -43,7 +43,7 @@
       opacity: 1;
     }
     &[data-error-visible="true"] .text-control {
-      border: 2px solid #e54858;
+      border: 2px solid $red-light;
     }
   }
   &__close {
@@ -62,7 +62,7 @@
       content: " ";
       height: 33px;
       width: 3px;
-      background-color: #fff;
+      background-color: $white;
     }
     &::before {
       transform: rotate(45deg);

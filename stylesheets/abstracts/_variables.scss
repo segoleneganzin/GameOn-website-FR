@@ -1,15 +1,21 @@
 // -----------------------------------------------------------------------------
 // This file contains all variables.
 // -----------------------------------------------------------------------------
-$font-default: "DM Sans", Arial, Helvetica, sans-serif;
-$font-slab: $font-default;
-$modal-duration: 0.8s;
+/* colors */
+$white: #fff;
+$black: #000;
+$red: #fe142f;
+$red-light: #ff4e60; // data-error form
+$blue: #3876ac; // background button hover
+$green: #279e7a; // form checkbox + radio
 
-/// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
-$breakpoints: (
-  "small": 375px,
-  "medium": 768px,
-  "large": 1024px,
-);
+/* typography */
+$font-default: "DM Sans", Arial, Helvetica, sans-serif;
+// $font-slab: $font-default;
+
+/* borders */
+$radius: 8px;
+
+/* modal */
+$modal-bg-color: rgba(26, 39, 156, 0.4);
+$modal-duration: 0.8s;

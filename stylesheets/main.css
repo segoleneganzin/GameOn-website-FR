@@ -1,3 +1,7 @@
+/* colors */
+/* typography */
+/* borders */
+/* modal */
 /**
  * Base
  */
@@ -42,7 +46,7 @@ p {
 
 /***** Menu *****/
 .main-navbar .icon i {
-  color: #ff0000;
+  color: #fe142f;
   font-size: 1.375rem;
 }
 
@@ -50,24 +54,21 @@ p {
 .main-navbar--responsive a {
   font-family: Roboto, sans-serif;
   font-size: 1.125rem;
-  color: #000000;
+  color: #000;
   text-decoration: none;
 }
-.main-navbar a:hover,
-.main-navbar--responsive a:hover {
-  background-color: #ff0000;
-  color: #ffffff;
-}
 .main-navbar .active,
-.main-navbar--responsive .active {
-  background-color: #ff0000;
-  color: #ffffff;
+.main-navbar a:hover,
+.main-navbar--responsive .active,
+.main-navbar--responsive a:hover {
+  background-color: #fe142f;
+  color: #fff;
 }
 
 /* Landing page */
 main {
   font-weight: bolder;
-  color: black;
+  color: #000;
   text-align: justify;
 }
 
@@ -87,7 +88,6 @@ main {
 
 /***** Form *****/
 .label {
-  font-family: "DM Sans", Arial, Helvetica, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
 }
@@ -108,7 +108,7 @@ main {
 }
 .modal__formData[data-error]::after {
   font-size: 0.4rem;
-  color: #e54858;
+  color: #ff4e60;
   text-align: right;
   line-height: 0.3;
 }
@@ -209,13 +209,11 @@ footer .copyrights {
   padding: 12px 12px;
   margin: 5px;
 }
-.main-navbar a:hover,
-.main-navbar--responsive a:hover {
-  border-radius: 15px;
-}
 .main-navbar .active,
-.main-navbar--responsive .active {
-  border-radius: 15px;
+.main-navbar a:hover,
+.main-navbar--responsive .active,
+.main-navbar--responsive a:hover {
+  border-radius: 8px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -277,7 +275,7 @@ footer .copyrights {
   animation-name: modalopen;
   animation-duration: 0.8s;
   background: #232323;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
   padding-top: 10px;
@@ -298,7 +296,7 @@ footer .copyrights {
   opacity: 1;
 }
 .modal__formData[data-error-visible=true] .text-control {
-  border: 2px solid #e54858;
+  border: 2px solid #ff4e60;
 }
 .modal__close {
   position: absolute;
@@ -412,7 +410,7 @@ footer .copyrights {
     width: unset;
   }
   .hero__img img {
-    border-radius: 10px;
+    border-radius: 8px;
     margin: 40px auto 60px;
   }
 }
@@ -518,7 +516,7 @@ form .checkbox-input:checked + .checkbox-label .checkbox-icon::after {
  */
 .btn {
   display: block;
-  border-radius: 7px;
+  border-radius: 8px;
   background: #fe142f;
   color: #fff;
   cursor: pointer;

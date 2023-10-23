@@ -4,12 +4,12 @@
 
 .btn {
   display: block;
-  border-radius: 7px;
-  background: #fe142f;
-  color: #fff;
+  border-radius: $radius;
+  background: $red;
+  color: $white;
   cursor: pointer;
   &:hover {
-    background: #3876ac;
+    background: $blue;
   }
   /* open modal button in hero */
   &-signup {
