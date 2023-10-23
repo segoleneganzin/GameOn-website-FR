@@ -2,7 +2,7 @@
  * Header
  */
 .header {
-  width: 95%;
+  max-width: 95%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,5 +17,14 @@
 @media screen and (max-width: 1024px) {
   .header {
     align-items: flex-start;
+  }
+}
+@media screen and (max-width: 425px) {
+  .header {
+    margin: 30px;
+    &__logo img {
+      width: 150px;
+      padding-top: 12px;
+    }
   }
 }

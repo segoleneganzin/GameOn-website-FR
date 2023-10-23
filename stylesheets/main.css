@@ -143,7 +143,7 @@ footer .copyrights {
  * Header
  */
 .header {
-  width: 95%;
+  max-width: 95%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -159,6 +159,15 @@ footer .copyrights {
 @media screen and (max-width: 1024px) {
   .header {
     align-items: flex-start;
+  }
+}
+@media screen and (max-width: 425px) {
+  .header {
+    margin: 30px;
+  }
+  .header__logo img {
+    width: 150px;
+    padding-top: 12px;
   }
 }
 /**
@@ -224,6 +233,22 @@ footer .copyrights {
   .main-navbar--responsive a {
     float: none;
     display: block;
+  }
+}
+@media screen and (max-width: 540px) {
+  .main-navbar--responsive {
+    width: 100%;
+    position: relative;
+  }
+  .main-navbar--responsive a {
+    display: block;
+    padding: 12px 12px;
+    margin: 5px;
+  }
+  .main-navbar--responsive .icon {
+    position: fixed;
+    right: 30px;
+    top: 30px;
   }
 }
 /**

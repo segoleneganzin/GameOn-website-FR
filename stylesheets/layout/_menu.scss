@@ -65,14 +65,18 @@
 }
 
 @media screen and (max-width: 540px) {
-  // .main-navbar {
-  // a {
-  //   display: none;
-  // }
-  // .icon {
-  // float: right;
-  // display: block;
-  // margin-top: -15px;
-  // }
-  // }
+  .main-navbar--responsive {
+    width: 100%;
+    position: relative;
+    a {
+      display: block;
+      padding: 12px 12px;
+      margin: 5px;
+    }
+    .icon {
+      position: fixed;
+      right: 30px;
+      top: 30px;
+    }
+  }
 }
