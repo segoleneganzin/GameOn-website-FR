@@ -2,80 +2,75 @@
  * Modal
  */
 /* Modal form */
-.modal__bground {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(26, 39, 156, 0.4);
-}
-
-.modal__content {
-  margin: 5% auto;
-  width: 100%;
-  max-width: 500px;
-  animation-name: modalopen;
-  animation-duration: $modal-duration;
-  background: #232323;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  color: #fff;
-  padding-top: 10px;
-}
-
-.modal__body {
-  padding: 15px 8%;
-  margin: 15px auto;
-}
-
-.modal__formData[data-error]::after {
-  content: attr(data-error);
-  font-size: 0.4em;
-  color: #e54858;
-  display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  text-align: right;
-  line-height: 0.3;
-  opacity: 0;
-  transition: 0.3s;
-}
-.modal__formData[data-error-visible="true"]::after {
-  opacity: 1;
-}
-.modal__formData[data-error-visible="true"] .text-control {
-  border: 2px solid #e54858;
-}
-
-.modal__close {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 32px;
-  height: 32px;
-  opacity: 1;
-  cursor: pointer;
-  transform: scale(0.7);
-}
-.modal__close:before,
-.modal__close:after {
-  position: absolute;
-  left: 15px;
-  content: " ";
-  height: 33px;
-  width: 3px;
-  background-color: #fff;
-}
-.modal__close:before {
-  transform: rotate(45deg);
-}
-.modal__close:after {
-  transform: rotate(-45deg);
+.modal {
+  &__bground {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(26, 39, 156, 0.4);
+  }
+  &__content {
+    margin: 5% auto;
+    width: 100%;
+    max-width: 500px;
+    animation-name: modalopen;
+    animation-duration: $modal-duration;
+    background: #232323;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 10px;
+  }
+  &__body {
+    padding: 15px 8%;
+    margin: 15px auto;
+  }
+  &__formData {
+    &[data-error]::after {
+      content: attr(data-error);
+      display: block;
+      margin-top: 7px;
+      margin-bottom: 7px;
+      opacity: 0;
+      transition: 0.3s;
+    }
+    &[data-error-visible="true"]::after {
+      opacity: 1;
+    }
+    &[data-error-visible="true"] .text-control {
+      border: 2px solid #e54858;
+    }
+  }
+  &__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(0.7);
+    &::before,
+    &::after {
+      position: absolute;
+      left: 15px;
+      content: " ";
+      height: 33px;
+      width: 3px;
+      background-color: #fff;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
 }
 
 @keyframes modalopen {

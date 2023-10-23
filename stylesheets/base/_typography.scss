@@ -82,6 +82,22 @@ main {
   font-weight: normal;
 }
 
+/* Modal */
+.modal {
+  &__content {
+    color: #fff;
+  }
+
+  &__formData {
+    &[data-error]::after {
+      font-size: 0.4em;
+      color: #e54858;
+      text-align: right;
+      line-height: 0.3;
+    }
+  }
+}
+
 /***** footer *****/
 footer {
   .copyrights {
