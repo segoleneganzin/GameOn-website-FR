@@ -8,20 +8,10 @@
 }
 
 body {
-  margin: 0;
   display: flex;
   flex-direction: column;
   max-width: 1300px;
   margin: 0 auto;
-}
-
-p {
-  margin-bottom: 0;
-  padding: 0.5vw;
-}
-
-img {
-  padding-right: 1rem;
 }
 
 /**
@@ -33,8 +23,12 @@ body {
   font-size: 1.125rem;
 }
 
+p {
+  font-size: 1.5rem;
+}
+
 .smFont {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 /***** Buttons *****/
@@ -43,19 +37,19 @@ body {
 }
 
 .btn-signup {
-  font-size: 1.3rem;
+  font-size: 1.56rem;
 }
 
 /***** Menu *****/
 .main-navbar .icon i {
   color: #ff0000;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 
 .main-navbar a,
 .main-navbar--responsive a {
   font-family: Roboto, sans-serif;
-  font-size: 20px;
+  font-size: 1.125rem;
   color: #000000;
   text-decoration: none;
 }
@@ -72,7 +66,6 @@ body {
 
 /* Landing page */
 main {
-  font-size: 130%;
   font-weight: bolder;
   color: black;
   text-align: justify;
@@ -95,17 +88,17 @@ main {
 /***** Form *****/
 .label {
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 
 .text-control {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .radio-label,
 .checkbox-label {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: normal;
 }
 
@@ -114,7 +107,7 @@ main {
   color: #fff;
 }
 .modal__formData[data-error]::after {
-  font-size: 0.4em;
+  font-size: 0.4rem;
   color: #e54858;
   text-align: right;
   line-height: 0.3;
@@ -406,6 +399,8 @@ footer .copyrights {
     background: #fff;
     padding: 0px 20px 20px 20px;
     gap: 40px;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
   }
   .hero__content::after {
     content: unset;
@@ -543,7 +538,7 @@ form .checkbox-input:checked + .checkbox-label .checkbox-icon::after {
 }
 .btn-submit {
   margin: 0 auto;
-  margin-top: 0.5em;
+  margin-top: 8px;
   padding: 12px 55px;
   border: 0;
 }

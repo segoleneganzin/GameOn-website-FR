@@ -7,8 +7,11 @@ body {
   font-family: $font-default;
   font-size: 1.125rem;
 }
+p {
+  font-size: 1.5rem;
+}
 .smFont {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 /***** Buttons *****/
@@ -16,20 +19,20 @@ body {
   font-size: 1rem;
 }
 .btn-signup {
-  font-size: 1.3rem;
+  font-size: 1.56rem;
 }
 
 /***** Menu *****/
 .main-navbar .icon i {
   color: #ff0000;
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 
 .main-navbar,
 .main-navbar--responsive {
   a {
     font-family: Roboto, sans-serif;
-    font-size: 20px;
+    font-size: 1.125rem;
     color: #000000;
     text-decoration: none;
     &:hover {
@@ -45,7 +48,6 @@ body {
 
 /* Landing page */
 main {
-  font-size: 130%;
   font-weight: bolder;
   color: black;
   text-align: justify;
@@ -70,15 +72,15 @@ main {
 /***** Form *****/
 .label {
   font-family: $font-default;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 .text-control {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .radio-label,
 .checkbox-label {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: normal;
 }
 
@@ -90,7 +92,7 @@ main {
 
   &__formData {
     &[data-error]::after {
-      font-size: 0.4em;
+      font-size: 0.4rem;
       color: #e54858;
       text-align: right;
       line-height: 0.3;

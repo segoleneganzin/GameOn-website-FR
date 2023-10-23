@@ -3,7 +3,6 @@
  */
 
 .main-navbar {
-  // float: right;
   a {
     float: left;
     text-align: center;
@@ -27,18 +26,6 @@
     border-radius: 15px;
   }
 }
-
-// @media screen and (max-width: 768px) {
-//   .main-navbar {
-//     a {
-//       display: none;
-//     }
-//     .icon {
-//       float: right;
-//       display: block;
-//     }
-//   }
-// }
 
 @media screen and (max-width: 1024px) {
   .main-navbar {

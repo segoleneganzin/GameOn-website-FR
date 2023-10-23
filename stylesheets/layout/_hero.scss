@@ -68,6 +68,8 @@
       background: #fff;
       padding: 0px 20px 20px 20px;
       gap: 40px;
+      min-width: fit-content;
+
       &::after {
         content: unset;
       }
