@@ -5,5 +5,7 @@
  *********************************************************************************/
 document.addEventListener("DOMContentLoaded", function () {
   // modal management
-  initAddEventListenerModal();
+  initModal();
+  // form management
+  initForm();
 });

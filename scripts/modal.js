@@ -9,7 +9,7 @@ const modalBg = document.querySelector(".modal__bground");
 /**
  * This function initializes the event listeners for the modal display.
  */
-function initAddEventListenerModal() {
+function initModal() {
   // **** const
   const modalBtn = document.querySelectorAll(".modal__btn");
   const modalClose = document.querySelector(".modal__close");
