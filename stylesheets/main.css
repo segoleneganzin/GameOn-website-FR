@@ -22,9 +22,9 @@ body {
  * Typography
  */
 /***** general *****/
-body {
+body,
+.btn {
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
-  font-size: 1.125rem;
 }
 
 p {
@@ -313,19 +313,8 @@ footer .copyrights {
   padding: 15px 8%;
   margin: 15px auto;
 }
-.modal__formData[data-error]::after {
-  content: attr(data-error);
-  display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  opacity: 0;
-  transition: 0.3s;
-}
-.modal__formData[data-error-visible=true]::after {
-  opacity: 1;
-}
-.modal__formData[data-error-visible=true] .text-control {
-  border: 2px solid #ff4e60;
+.modal__formData {
+  margin-top: 5px;
 }
 .modal__close {
   position: absolute;
@@ -559,6 +548,9 @@ form .checkbox-icon::after {
   transform: rotate(-55deg);
   left: 21%;
   top: 19%;
+}
+form .checkbox-label {
+  margin: 10px 0;
 }
 form .checkbox-input:checked + .checkbox-label .checkbox-icon {
   background: #279e7a;

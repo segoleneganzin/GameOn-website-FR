@@ -3,9 +3,10 @@
  */
 
 /***** general *****/
-body {
+body,
+.btn {
   font-family: $font-default;
-  font-size: 1.125rem;
+  // font-size: 1.125rem;
 }
 p {
   font-size: 1.5rem;

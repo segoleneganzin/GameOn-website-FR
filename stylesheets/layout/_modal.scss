@@ -31,20 +31,21 @@
     margin: 15px auto;
   }
   &__formData {
-    &[data-error]::after {
-      content: attr(data-error);
-      display: block;
-      margin-top: 7px;
-      margin-bottom: 7px;
-      opacity: 0;
-      transition: 0.3s;
-    }
-    &[data-error-visible="true"]::after {
-      opacity: 1;
-    }
-    &[data-error-visible="true"] .text-control {
-      border: 2px solid $red-light;
-    }
+    margin-top: 5px;
+    // &[data-error]::after {
+    //   content: attr(data-error);
+    //   display: block;
+    //   margin-top: 7px;
+    //   margin-bottom: 7px;
+    //   opacity: 0;
+    //   transition: 0.3s;
+    // }
+    // &[data-error-visible="true"]::after {
+    //   opacity: 1;
+    // }
+    // &[data-error-visible="true"] .text-control {
+    //   border: 2px solid $red-light;
+    // }
   }
   &__close {
     position: absolute;

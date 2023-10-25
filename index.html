@@ -58,8 +58,8 @@
       <section class="modal__content">
         <span class="modal__close"></span>
         <div class="modal__body">
-          <form class="form" name="reserve" action="index.html" method="get" onsubmit="return validate();" novalidate>
-            <div class="modal__formData">
+          <form class="form" name="reserve" action="index.html" method="get">
+            <div class=" modal__formData">
               <label for="firstName" class="label">Prénom</label>
               <input class="text-control" type="text" id="firstName" name="firstName" minlength="2" />
             </div>
@@ -83,7 +83,7 @@
             </div>
             <div class="modal__formData">
               <legend class="label">À quel tournoi souhaitez-vous participer cette année ?</legend>
-              <div class="radio-container">
+              <div class="radio-container" id="locationRadioContainer">
                 <input class="radio-input" type="radio" id="newYork" name="location" value="New York" />
                 <label class="radio-label" for="newYork">
                   <span class="radio-icon"></span>
@@ -114,7 +114,7 @@
             <div class="modal__formData checkbox-container">
               <!-- check by default does not comply with RGPD -->
               <input class="checkbox-input" type="checkbox" name="gcu" id="gcu" />
-              <label class="checkbox-label" for="gcu" required>
+              <label class="checkbox-label" for="gcu" id="gcuLabel" required>
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
               </label>

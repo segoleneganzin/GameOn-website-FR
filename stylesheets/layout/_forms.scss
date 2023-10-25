@@ -101,6 +101,9 @@ form {
       top: 19%;
     }
   }
+  .checkbox-label {
+    margin: 10px 0;
+  }
   .checkbox-input:checked + .checkbox-label .checkbox-icon {
     background: $green;
     &::after {
