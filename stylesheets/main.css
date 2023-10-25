@@ -29,6 +29,7 @@ body,
 
 p {
   font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .smFont {
@@ -102,15 +103,20 @@ main {
   font-weight: normal;
 }
 
+.error-message {
+  font-family: "Roboto";
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #ff4e60;
+}
+
 /* Modal */
 .modal__content {
   color: #fff;
 }
-.modal__formData[data-error]::after {
-  font-size: 0.4rem;
-  color: #ff4e60;
-  text-align: right;
-  line-height: 0.3;
+.modal__reservation-validation p {
+  font-size: 2.25rem;
+  text-align: center;
 }
 
 /***** footer *****/
@@ -298,9 +304,10 @@ footer .copyrights {
   background-color: rgba(26, 39, 156, 0.4);
 }
 .modal__content {
-  margin: 10% auto;
+  margin: 5% auto;
   width: 100%;
   max-width: 500px;
+  min-height: 75vh;
   animation-name: modalopen;
   animation-duration: 0.8s;
   background: #232323;
@@ -309,14 +316,7 @@ footer .copyrights {
   position: relative;
   padding-top: 10px;
 }
-.modal__body {
-  padding: 15px 8%;
-  margin: 15px auto;
-}
-.modal__formData {
-  margin-top: 5px;
-}
-.modal__close {
+.modal__content .cross-close {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -326,7 +326,7 @@ footer .copyrights {
   cursor: pointer;
   transform: scale(0.7);
 }
-.modal__close::before, .modal__close::after {
+.modal__content .cross-close::before, .modal__content .cross-close::after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -334,11 +334,27 @@ footer .copyrights {
   width: 3px;
   background-color: #fff;
 }
-.modal__close::before {
+.modal__content .cross-close::before {
   transform: rotate(45deg);
 }
-.modal__close::after {
+.modal__content .cross-close::after {
   transform: rotate(-45deg);
+}
+.modal__body {
+  padding: 15px 8%;
+  margin: 15px auto;
+}
+.modal__formData {
+  margin-top: 5px;
+}
+.modal__reservation-validation {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 75vh;
+}
+.modal__reservation-validation p {
+  margin: auto;
 }
 
 @keyframes modalopen {
@@ -352,7 +368,7 @@ footer .copyrights {
 }
 @media screen and (max-width: 768px) {
   .modal__content {
-    margin: 15% auto;
+    margin: 10% auto;
   }
 }
 @media screen and (max-width: 580px) {
@@ -455,15 +471,6 @@ footer .copyrights {
 /*
 ** Forms
 */
-form {
-  /*
-  input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-  }
-  */
-}
 form label {
   display: inline-block;
   margin-bottom: 11px;
@@ -482,6 +489,9 @@ form .text-control {
   width: 100%;
   border-radius: 8px;
   height: 48px;
+}
+form .input-error {
+  border: 2px solid #ff4e60;
 }
 form .radio-input,
 form .checkbox-input {

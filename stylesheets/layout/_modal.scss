@@ -15,9 +15,10 @@
     background-color: $modal-bg-color;
   }
   &__content {
-    margin: 10% auto;
+    margin: 5% auto;
     width: 100%;
     max-width: 500px;
+    min-height: 75vh;
     animation-name: modalopen;
     animation-duration: $modal-duration;
     background: #232323;
@@ -25,6 +26,31 @@
     overflow: hidden;
     position: relative;
     padding-top: 10px;
+    .cross-close {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      width: 32px;
+      height: 32px;
+      opacity: 1;
+      cursor: pointer;
+      transform: scale(0.7);
+      &::before,
+      &::after {
+        position: absolute;
+        left: 15px;
+        content: " ";
+        height: 33px;
+        width: 3px;
+        background-color: $white;
+      }
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
   }
   &__body {
     padding: 15px 8%;
@@ -32,44 +58,15 @@
   }
   &__formData {
     margin-top: 5px;
-    // &[data-error]::after {
-    //   content: attr(data-error);
-    //   display: block;
-    //   margin-top: 7px;
-    //   margin-bottom: 7px;
-    //   opacity: 0;
-    //   transition: 0.3s;
-    // }
-    // &[data-error-visible="true"]::after {
-    //   opacity: 1;
-    // }
-    // &[data-error-visible="true"] .text-control {
-    //   border: 2px solid $red-light;
-    // }
   }
-  &__close {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    width: 32px;
-    height: 32px;
-    opacity: 1;
-    cursor: pointer;
-    transform: scale(0.7);
-    &::before,
-    &::after {
-      position: absolute;
-      left: 15px;
-      content: " ";
-      height: 33px;
-      width: 3px;
-      background-color: $white;
-    }
-    &::before {
-      transform: rotate(45deg);
-    }
-    &::after {
-      transform: rotate(-45deg);
+
+  &__reservation-validation {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 75vh;
+    p {
+      margin: auto;
     }
   }
 }
@@ -87,7 +84,7 @@
 @media screen and (max-width: 768px) {
   .modal {
     &__content {
-      margin: 15% auto;
+      margin: 10% auto;
     }
   }
 }

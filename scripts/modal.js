@@ -12,13 +12,13 @@ const modalBg = document.querySelector(".modal__bground");
 function initModal() {
   // **** const
   const modalBtn = document.querySelectorAll(".modal__btn");
-  const modalClose = document.querySelector(".modal__close");
+  const modalClose = document.querySelectorAll(".modal__close");
 
   // **** events
   // launch modal event
   modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
   // close modal event
-  modalClose.addEventListener("click", closeModal);
+  modalClose.forEach((btn) => btn.addEventListener("click", closeModal));
 }
 
 /**

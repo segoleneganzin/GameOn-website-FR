@@ -22,13 +22,10 @@ form {
     border-radius: $radius;
     height: 48px;
   }
-  /*
-  input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
+
+  .input-error {
+    border: 2px solid $red-light;
   }
-  */
 
   .radio-input,
   .checkbox-input {
@@ -45,12 +42,9 @@ form {
 
   .radio-icon,
   .checkbox-icon {
-    // display: block;
     width: 20px;
     height: 20px;
     position: relative;
-    // left: -30px;
-    // top: -1px;
     &::after {
       content: "";
       position: absolute;

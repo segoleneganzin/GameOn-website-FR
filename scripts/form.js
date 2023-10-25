@@ -73,6 +73,8 @@ function manageForm() {
     checkCheckbox("gcu", checkboxLabel);
     // clear the error message if exists
     clearErrorMessage(checkboxLabel);
+    // show validation message to user
+    displayReservationValidation();
   } catch (error) {
     console.log(error.message);
   }
@@ -127,10 +129,14 @@ function checkBirthDate(birthdate) {
  * @throws {Error}
  */
 function checkQuantity(quantity) {
-  const quantityRegExp = new RegExp("^\\d+$");
+  // an integer between 0 and 99
+  const quantityRegExp = new RegExp("^[1-9]{0,1}[0-9]$");
   let quantityValue = quantity.value;
   if (!quantityRegExp.test(quantityValue)) {
-    printErrorMessage("Veuillez entrer un chiffre", quantity);
+    printErrorMessage(
+      "Veuillez entrer un chiffre compris entre 0 et 99",
+      quantity
+    );
     throw new Error(`le champs ${quantity.id} n'est pas valide`);
   }
 }
@@ -158,7 +164,7 @@ function checkCheckbox(checkboxName, checkboxLabel) {
   );
   if (checkboxCheck === null) {
     printErrorMessage(
-      "Veuillez acceptez les termes et conditions.",
+      "Veuillez accepter les termes et conditions.",
       checkboxLabel
     );
     throw new Error("Les CGU ne sont pas acceptées");
@@ -177,11 +183,10 @@ function printErrorMessage(message, parentElement) {
   if (!spanErreurMessage) {
     spanErreurMessage = document.createElement("span");
     spanErreurMessage.id = `erreur-${parentElement.id}`;
-    // span and parentElement input style
-    spanErreurMessage.style.color = "#FF4E60";
-    spanErreurMessage.style.fontSize = "10px";
-    spanErreurMessage.style.fontFamily = "Roboto";
-    parentElement.style.border = "2px solid #FF4E60";
+    spanErreurMessage.classList.add("error-message");
+    if (parentElement.tagName === "INPUT") {
+      parentElement.classList.add("input-error");
+    }
     // insert span after parent
     parentElement.insertAdjacentElement("afterend", spanErreurMessage);
   }
@@ -195,6 +200,18 @@ function clearErrorMessage(parentElement) {
   let spanErreurMessage = document.getElementById(`erreur-${parentElement.id}`);
   if (spanErreurMessage) {
     printErrorMessage("", parentElement);
+    spanErreurMessage.classList.remove("error-message");
+    parentElement.classList.remove("input-error");
     parentElement.style.border = "none";
   }
+}
+
+function displayReservationValidation() {
+  const modal = document.querySelector(".modal__body");
+  const modalForm = document.querySelector(".modal__body form");
+  modalForm.style.display = "none";
+  let reservationValidationDiv = document.querySelector(
+    ".modal__reservation-validation"
+  );
+  reservationValidationDiv.style.display = "flex";
 }

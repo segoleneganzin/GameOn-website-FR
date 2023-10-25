@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8" />
@@ -56,30 +56,30 @@
     <!-- modal -->
     <div class="modal__bground">
       <section class="modal__content">
-        <span class="modal__close"></span>
+        <span class="modal__close cross-close"></span>
         <div class="modal__body">
-          <form class="form" name="reserve" action="index.html" method="get">
+          <form class="form" name="reserve" action="index.html" method="get" novalidate>
             <div class=" modal__formData">
               <label for="firstName" class="label">Prénom</label>
-              <input class="text-control" type="text" id="firstName" name="firstName" minlength="2" />
+              <input class="text-control" type="text" id="firstName" name="firstName" required />
             </div>
             <div class="modal__formData">
               <label for="lastName" class="label">Nom</label>
-              <input class="text-control" type="text" id="lastName" name="lastName" />
+              <input class="text-control" type="text" id="lastName" name="lastName" required />
             </div>
             <div class="modal__formData">
               <label for="email" class="label">E-mail</label>
-              <input class="text-control" type="email" id="email" name="email" />
+              <input class="text-control" type="email" id="email" name="email" required />
             </div>
             <div class="modal__formData">
               <label for="birthdate" class="label">Date de naissance</label>
-              <input class="text-control" type="date" id="birthdate" name="birthdate" />
+              <input class="text-control" type="date" id="birthdate" name="birthdate" required />
             </div>
             <div class="modal__formData">
               <label for="quantity" class="label" id="quantityTournaments">À combien de tournois GameOn avez-vous déjà
                 participé
                 ?</label>
-              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+              <input type="number" class="text-control" id="quantity" name="quantity" required>
             </div>
             <div class="modal__formData">
               <legend class="label">À quel tournoi souhaitez-vous participer cette année ?</legend>
@@ -126,6 +126,10 @@
             </div>
             <input class="btn btn-submit" type="submit" value="C'est parti" />
           </form>
+          <div class="modal__reservation-validation">
+            <p>Merci pour votre inscription</p>
+            <button class="btn btn-submit modal__close"> fermer </button>
+          </div>
         </div>
       </section>
     </div>

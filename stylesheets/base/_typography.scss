@@ -10,6 +10,7 @@ body,
 }
 p {
   font-size: 1.5rem;
+  font-weight: 400;
 }
 .smFont {
   font-size: 1rem;
@@ -80,19 +81,22 @@ main {
   font-size: 0.75rem;
   font-weight: normal;
 }
+.error-message {
+  font-family: "Roboto";
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: $red-light;
+}
 
 /* Modal */
 .modal {
   &__content {
     color: $white;
   }
-
-  &__formData {
-    &[data-error]::after {
-      font-size: 0.4rem;
-      color: $red-light;
-      text-align: right;
-      line-height: 0.3;
+  &__reservation-validation {
+    p {
+      font-size: 2.25rem;
+      text-align: center;
     }
   }
 }
