@@ -58,7 +58,8 @@
       <section class="modal__content">
         <span class="modal__close cross-close"></span>
         <div class="modal__body">
-          <form class="form" name="reserve" action="index.html" method="get" novalidate>
+          <!-- novalidate permitted override by js -->
+          <form id="form" name="reserve" action="index.html" method="get" novalidate>
             <div class=" modal__formData">
               <label for="firstName" class="label">Prénom</label>
               <input class="text-control" type="text" id="firstName" name="firstName" required />

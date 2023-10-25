@@ -7,12 +7,15 @@
 /**
  * This function initialize the form depends on screen size and manage form submit event
  */
+const form = document.querySelector("#form");
+
 function initForm() {
-  const form = document.querySelector(".form");
   const quantityTournaments = document.getElementById("quantityTournaments");
   // **** adaptive innerHTML
-  let screenSize = window.matchMedia("(min-width: 475px)");
+  const screenSize = window.matchMedia("(min-width: 475px)");
 
+  // // ** hide the validation message if user has already send a reservation and want to add another
+  // hideReservationValidation();
   // replace text if media screen is under 475px
   if (screenSize.matches) {
     quantityTournaments.innerText =
@@ -206,12 +209,26 @@ function clearErrorMessage(parentElement) {
   }
 }
 
+/**
+ * this function hide the form and show a validation message
+ */
 function displayReservationValidation() {
-  const modal = document.querySelector(".modal__body");
   const modalForm = document.querySelector(".modal__body form");
-  modalForm.style.display = "none";
   let reservationValidationDiv = document.querySelector(
     ".modal__reservation-validation"
   );
+  modalForm.style.display = "none";
   reservationValidationDiv.style.display = "flex";
+}
+
+/**
+ * this function reinitialize the form and hide the validation message
+ */
+function hideReservationValidation() {
+  const modalForm = document.querySelector(".modal__body form");
+  let reservationValidationDiv = document.querySelector(
+    ".modal__reservation-validation"
+  );
+  modalForm.style.display = "block";
+  reservationValidationDiv.style.display = "none";
 }

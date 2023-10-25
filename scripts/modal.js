@@ -26,6 +26,8 @@ function initModal() {
  */
 function launchModal() {
   modalBg.style.display = "block";
+  // form management
+  initForm();
 }
 /**
  * This function hides the modal popup
