@@ -253,15 +253,3 @@ function displayReservationValidation() {
   modalForm.style.display = "none";
   reservationValidationDiv.style.display = "flex";
 }
-
-/**
- * this function reinitialize the form and hide the validation message
- */
-function hideReservationValidation() {
-  const modalForm = document.querySelector(".modal__body form");
-  let reservationValidationDiv = document.querySelector(
-    ".modal__reservation-validation"
-  );
-  modalForm.style.display = "block";
-  reservationValidationDiv.style.display = "none";
-}

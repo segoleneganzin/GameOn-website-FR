@@ -569,7 +569,6 @@ form .checkbox-input:checked + .checkbox-label .checkbox-icon::after {
   opacity: 1;
 }
 
-/* custom select styles */
 /**
  * Button
  */
