@@ -1,0 +1,97 @@
+/**
+ * Modal
+ */
+/* Modal form */
+.modal {
+  &__bground {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: $modal-bg-color;
+  }
+  &__content {
+    margin: 5% auto;
+    width: 100%;
+    max-width: 500px;
+    min-height: 75vh;
+    animation-name: modalopen;
+    animation-duration: $modal-duration;
+    background: #232323;
+    border-radius: $radius;
+    overflow: hidden;
+    position: relative;
+    padding-top: 10px;
+    .cross-close {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      width: 32px;
+      height: 32px;
+      opacity: 1;
+      cursor: pointer;
+      transform: scale(0.7);
+      &::before,
+      &::after {
+        position: absolute;
+        left: 15px;
+        content: " ";
+        height: 33px;
+        width: 3px;
+        background-color: $white;
+      }
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  &__body {
+    padding: 15px 8%;
+    margin: 15px auto;
+  }
+  &__formData {
+    margin-top: 5px;
+  }
+
+  &__reservation-validation {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 75vh;
+    p {
+      margin: auto;
+    }
+  }
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    &__content {
+      margin: 10% auto;
+    }
+  }
+}
+@media screen and (max-width: 580px) {
+  .modal {
+    &__content {
+      margin: 20% auto;
+    }
+  }
+}

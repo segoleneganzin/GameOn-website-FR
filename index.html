@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>GameOn</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./stylesheets/main.css" />
+  <!-- <link rel="stylesheet" href="./styles/modal.css" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header">
+    <div class="header__logo">
+      <img alt="logo" src="./assets/Logo.png" width="auto" height="auto" />
+    </div>
+    <nav class="main-navbar" id="main-nav">
+      <a href="#" class="active">Accueil</a>
+      <a href="#">Détails de l'évènement</a>
+      <a href="#">À propos</a>
+      <a href="#">Contact</a>
+      <a href="#">Évènements passés</a>
+      <a href="javascript:void(0);" class="icon" onclick="editNav()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- hero -->
+    <section class="hero__section">
+      <div class="hero__content">
+        <h1 class="hero__headline">
+          Marathon national<br>
+          de jeux vidéos
+        </h1>
+        <p class="hero__text">
+          Vous aimez jouer ? Notre prochain évènement gaming est ouvert
+          aux réservations... Places limitées !
+        </p>
+        <button class="btn btn-signup modal__btn">
+          je m'inscris
+        </button>
+      </div>
+      <div class="hero__img">
+        <img src="./assets/bg_img.jpg" alt="fille jouant aux jeux videos" />
+      </div>
+      <!-- responsive sign up button -->
+      <button class="btn btn-signup modal__btn ">
+        je m'inscris
+      </button>
+    </section>
+    <!-- modal -->
+    <div class="modal__bground">
+      <section class="modal__content">
+        <span class="modal__close cross-close"></span>
+        <div class="modal__body">
+          <!-- novalidate permitted override by js -->
+          <form id="form" name="reserve" action="index.html" method="get" novalidate>
+            <div class=" modal__formData">
+              <label for="firstName" class="label">Prénom</label>
+              <input class="text-control" type="text" id="firstName" name="firstName" required />
+            </div>
+            <div class="modal__formData">
+              <label for="lastName" class="label">Nom</label>
+              <input class="text-control" type="text" id="lastName" name="lastName" required />
+            </div>
+            <div class="modal__formData">
+              <label for="email" class="label">E-mail</label>
+              <input class="text-control" type="email" id="email" name="email" required />
+            </div>
+            <div class="modal__formData">
+              <label for="birthdate" class="label">Date de naissance</label>
+              <input class="text-control" type="date" id="birthdate" name="birthdate" required />
+            </div>
+            <div class="modal__formData">
+              <label for="quantity" class="label" id="quantityTournaments">À combien de tournois GameOn avez-vous déjà
+                participé
+                ?</label>
+              <input type="number" class="text-control" id="quantity" name="quantity" required>
+            </div>
+            <div class="modal__formData">
+              <legend class="label">À quel tournoi souhaitez-vous participer cette année ?</legend>
+              <div class="radio-container" id="locationRadioContainer">
+                <input class="radio-input" type="radio" id="newYork" name="location" value="New York" />
+                <label class="radio-label" for="newYork">
+                  <span class="radio-icon"></span>
+                  New York</label>
+                <input class="radio-input" type="radio" id="sanFrancisco" name="location" value="San Francisco" />
+                <label class="radio-label" for="sanFrancisco">
+                  <span class="radio-icon"></span>
+                  San Francisco</label>
+                <input class="radio-input" type="radio" id="seattle" name="location" value="Seattle" />
+                <label class="radio-label" for="seattle">
+                  <span class="radio-icon"></span>
+                  Seattle</label>
+                <input class="radio-input" type="radio" id="chicago" name="location" value="Chicago" />
+                <label class="radio-label" for="chicago">
+                  <span class="radio-icon"></span>
+                  Chicago</label>
+                <input class="radio-input" type="radio" id="boston" name="location" value="Boston" />
+                <label class="radio-label" for="boston">
+                  <span class="radio-icon"></span>
+                  Boston</label>
+                <input class="radio-input" type="radio" id="portland" name="location" value="Portland" />
+                <label class="radio-label" for="portland">
+                  <span class="radio-icon"></span>
+                  Portland</label>
+              </div>
+            </div>
+
+            <div class="modal__formData checkbox-container">
+              <!-- check by default does not comply with RGPD -->
+              <input class="checkbox-input" type="checkbox" name="gcu" id="gcu" />
+              <label class="checkbox-label" for="gcu" id="gcuLabel" required>
+                <span class="checkbox-icon"></span>
+                J'ai lu et accepté les conditions d'utilisation.
+              </label>
+              <input class="checkbox-input" type="notify" id="notify" />
+              <label class="checkbox-label" for="notify">
+                <span class="checkbox-icon"></span>
+                Je souhaite être prévenu des prochains évènements.
+              </label>
+            </div>
+            <input class="btn btn-submit" type="submit" value="C'est parti" />
+          </form>
+          <div class="modal__reservation-validation">
+            <p>Merci pour votre inscription</p>
+            <button class="btn btn-submit modal__close"> fermer </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- footer -->
+  <footer>
+    <p class="copyrights">
+      Copyright 2014 - 2022, GameOn Inc.
+    </p>
+  </footer>
+  <!-- scripts -->
+  <script src="./scripts/menu.js" defer></script>
+  <script src="./scripts/modal.js" defer></script>
+  <script src="./scripts/form.js" defer></script>
+  <script src="./scripts/main.js" defer></script>
+</body>
+
+</html>

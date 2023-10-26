@@ -1,0 +1,17 @@
+/**
+ * Footer
+ */
+footer {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 0 20px;
+  .copyrights {
+    padding: 0;
+    margin: 60px 0 30px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  footer .copyrights {
+    margin: 50px;
+  }
+}

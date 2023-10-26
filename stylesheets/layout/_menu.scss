@@ -1,0 +1,67 @@
+/**
+ * Menu
+ */
+
+.main-navbar {
+  a {
+    float: left;
+    text-align: center;
+  }
+
+  .icon {
+    display: none;
+  }
+}
+.main-navbar,
+.main-navbar--responsive {
+  a {
+    display: block;
+    padding: 12px 12px;
+    margin: 5px;
+  }
+  .active,
+  a:hover {
+    border-radius: $radius;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main-navbar {
+    a {
+      display: none;
+    }
+    .icon {
+      float: right;
+      display: block;
+    }
+    &--responsive {
+      position: relative;
+      .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      a {
+        float: none;
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .main-navbar--responsive {
+    width: 100%;
+    position: relative;
+    a {
+      display: block;
+      padding: 12px 12px;
+      margin: 5px;
+    }
+    .icon {
+      position: fixed;
+      right: 30px;
+      top: 30px;
+    }
+  }
+}
