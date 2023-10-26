@@ -1,7 +1,7 @@
 /*********************************************************************************
  *
  * This file contains all the functions required to display
- * and close the modal popup.
+ * and close the modal popup and initialize the form
  *
  *********************************************************************************/
 const modalBg = document.querySelector(".modal__bground");
