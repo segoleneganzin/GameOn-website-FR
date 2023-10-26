@@ -199,14 +199,14 @@ footer .copyrights {
   .header {
     align-items: flex-start;
   }
+  .header__logo {
+    padding: 5px 10px;
+  }
 }
 @media screen and (max-width: 580px) {
-  .header {
-    margin: 30px;
-  }
   .header__logo img {
     width: 150px;
-    padding-top: 12px;
+    padding: 5px;
   }
 }
 /**
@@ -440,7 +440,7 @@ footer .copyrights {
   }
   .hero__content {
     background: #fff;
-    padding: 0px 20px 20px 20px;
+    padding: 0px;
     gap: 40px;
     min-width: -moz-fit-content;
     min-width: fit-content;
@@ -471,7 +471,7 @@ footer .copyrights {
 /*
 ** Forms
 */
-form label {
+form .label {
   display: inline-block;
   margin-bottom: 11px;
 }

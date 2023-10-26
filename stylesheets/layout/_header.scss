@@ -17,14 +17,16 @@
 @media screen and (max-width: 1024px) {
   .header {
     align-items: flex-start;
+    &__logo {
+      padding: 5px 10px;
+    }
   }
 }
 @media screen and (max-width: 580px) {
   .header {
-    margin: 30px;
     &__logo img {
       width: 150px;
-      padding-top: 12px;
+      padding: 5px;
     }
   }
 }
