@@ -38,44 +38,30 @@ function initForm() {
  * and tests whether the fields are valid.
  */
 function manageForm() {
+  const firstName = document.getElementById("firstName");
+  const lastName = document.getElementById("lastName");
+  const email = document.getElementById("email");
+  const birthdate = document.getElementById("birthdate");
+  const quantity = document.getElementById("quantity");
+  const locationRadioContainer = document.getElementById(
+    "locationRadioContainer"
+  );
+  const checkboxLabel = document.querySelector("input[name='gcu'] + label");
   try {
     // ** check firstName (at least 2 characters)
-    const firstName = document.getElementById("firstName");
     checkName(firstName);
-    // clear the error message if exists
-    clearErrorMessage(firstName);
     // ** check lastName (at least 2 characters)
-    const lastName = document.getElementById("lastName");
     checkName(lastName);
-    // clear the error message if exists
-    clearErrorMessage(lastName);
     // ** check email
-    const email = document.getElementById("email");
     checkEmail(email);
-    // clear the error message if exists
-    clearErrorMessage(email);
     // ** check birthdate
-    const birthdate = document.getElementById("birthdate");
     checkBirthDate(birthdate);
-    // clear the error message if exists
-    clearErrorMessage(birthdate);
     // ** check the numerical value of the "number of tournament participations" field
-    const quantity = document.getElementById("quantity");
     checkQuantity(quantity);
-    // clear the error message if exists
-    clearErrorMessage(quantity);
     // ** check if a radio button is checked
-    const locationRadioContainer = document.getElementById(
-      "locationRadioContainer"
-    );
     checkSelectedRadioButtons("location", locationRadioContainer);
-    // clear the error message if exists
-    clearErrorMessage(locationRadioContainer);
     // ** check if gcu are checked
-    const checkboxLabel = document.querySelector("input[name='gcu'] + label");
     checkCheckbox("gcu", checkboxLabel);
-    // clear the error message if exists
-    clearErrorMessage(checkboxLabel);
     // show validation message to user
     displayReservationValidation();
   } catch (error) {
@@ -96,6 +82,9 @@ function checkName(name) {
       name
     );
     throw new Error(`le champs ${name.id} a moins de 2 lettres.`);
+  } else {
+    // clear the error message if exists
+    clearErrorMessage(name);
   }
 }
 
@@ -110,6 +99,9 @@ function checkEmail(email) {
   if (!emailRegExp.test(emailValue)) {
     printErrorMessage("Veuillez entrer une adresse email valide.", email);
     throw new Error(`le champs ${email.id} n'est pas valide`);
+  } else {
+    // clear the error message if exists
+    clearErrorMessage(email);
   }
 }
 
@@ -123,6 +115,9 @@ function checkBirthDate(birthdate) {
   if (!birthdateValue) {
     printErrorMessage("Veuillez entrer votre date de naissance.", birthdate);
     throw new Error(`le champs ${birthdate.id} est vide`);
+  } else {
+    // clear the error message if exists
+    clearErrorMessage(birthdate);
   }
 }
 
@@ -141,6 +136,9 @@ function checkQuantity(quantity) {
       quantity
     );
     throw new Error(`le champs ${quantity.id} n'est pas valide`);
+  } else {
+    // clear the error message if exists
+    clearErrorMessage(quantity);
   }
 }
 /**
@@ -155,6 +153,9 @@ function checkSelectedRadioButtons(radioButtonName, radioButtonsContainer) {
   if (radioButtonCheck === null) {
     printErrorMessage("Veuillez choisir une option", radioButtonsContainer);
     throw new Error("Aucun bouton radio n'est coché");
+  } else {
+    // clear the error message if exists
+    clearErrorMessage(radioButtonsContainer);
   }
 }
 /**
@@ -171,6 +172,9 @@ function checkCheckbox(checkboxName, checkboxLabel) {
       checkboxLabel
     );
     throw new Error("Les CGU ne sont pas acceptées");
+  } else {
+    // clear the error message if exists
+    clearErrorMessage(checkboxLabel);
   }
 }
 
@@ -199,13 +203,19 @@ function printErrorMessage(message, parentElement) {
  * This function clears the error message if exists
  * @param {object} parentElement
  */
+// function clearErrorMessage(parentElement) {
+//   let spanErreurMessage = document.getElementById(`erreur-${parentElement.id}`);
+//   if (spanErreurMessage) {
+//     printErrorMessage("", parentElement);
+//     spanErreurMessage.classList.remove("error-message");
+//     parentElement.classList.remove("input-error");
+//   }
+// }
 function clearErrorMessage(parentElement) {
   let spanErreurMessage = document.getElementById(`erreur-${parentElement.id}`);
   if (spanErreurMessage) {
-    printErrorMessage("", parentElement);
-    spanErreurMessage.classList.remove("error-message");
+    spanErreurMessage.remove();
     parentElement.classList.remove("input-error");
-    parentElement.style.border = "none";
   }
 }
 
