@@ -18,7 +18,7 @@ Figma ( [voir la maquette](<https://www.figma.com/file/SZzNANZFWXWftwa8TGIP9E/UI
 
 ### 🎯 Objectifs
 
-➡ compléter la partie Front-end.
+➡ compléter la partie Front-end. <br>
 ➡ rendre le formulaire pleinement fonctionnel en ajoutant du javaScript.
 
 ### 🏆 Compétences évaluées
