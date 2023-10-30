@@ -75,7 +75,6 @@ function manageForm() {
 /**
  * This function check if names fields are at least 2 characters
  * @param {object} name
- * @throws {Error}
  */
 function checkName(name) {
   let res = true;
@@ -96,7 +95,6 @@ function checkName(name) {
 /**
  * This function validates if it is in the correct format.
  * @param {object} email
- * @throws {Error}
  */
 function checkEmail(email) {
   let res = true;
@@ -115,7 +113,6 @@ function checkEmail(email) {
 /**
  * This function validates if birthdate is not null and if user is over 6 years old
  * @param {object} birthdate
- * @throws {Error}
  */
 function checkBirthDate(birthdate) {
   let res = true;
@@ -149,7 +146,6 @@ function checkBirthDate(birthdate) {
 /**
  * This function validates if it is in the correct format.
  * @param {object} quantity
- * @throws {Error}
  */
 function checkQuantity(quantity) {
   let res = true;
