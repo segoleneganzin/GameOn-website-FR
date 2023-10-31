@@ -46,6 +46,7 @@ function manageForm() {
   );
   const checkboxLabel = document.querySelector("input[name='gcu'] + label");
   try {
+    console.log("test envoi du formulaire");
     // for print errors messages if necessary
     checkName(firstName);
     checkName(lastName);
